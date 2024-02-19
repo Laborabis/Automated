@@ -7,14 +7,12 @@
             "es2022",
             "dom"
         ],
-        "allowJs":true,
         "types": [
             "node",
             "@wdio/globals/types",
             "expect-webdriverio",
-            "@wdio/visual-service",
-            "wdio-gmail-service",
-            "wdio-vscode-service"
+            "@wdio/mocha-framework",
+            "@wdio/crossbrowsertesting-service"
         ],
         "skipLibCheck": true,
         "noEmit": true,
@@ -28,7 +26,6 @@
     },
     "include": [
         "test",
-        "./src/test/**/*.ts",
         "wdio.conf.ts"
-    ] 
+    ]
 }

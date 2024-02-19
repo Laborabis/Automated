@@ -1,5 +1,5 @@
-import type { WebdriverIOConfig } from '@serenity-js/webdriverio'
-export const config: WebdriverIOConfig = {
+import type { Options } from '@wdio/types'
+export const config: Options.Testrunner = {
     //
     // ====================
     // Runner Configuration
@@ -9,7 +9,7 @@ export const config: WebdriverIOConfig = {
     autoCompileOpts: {
         autoCompile: true,
         tsNodeOpts: {
-            project: './tsconfig.json',
+            project: './tsconfig.e2e.json',
             transpileOnly: true
         }
     },
@@ -30,7 +30,7 @@ export const config: WebdriverIOConfig = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.ts'
+        // ToDo: define location for spec files here
     ],
     // Patterns to exclude.
     exclude: [
@@ -109,7 +109,7 @@ export const config: WebdriverIOConfig = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['visual', 'gmail', 'vscode'],
+    services: ['visual'],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -117,25 +117,8 @@ export const config: WebdriverIOConfig = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: '@serenity-js/webdriverio',
-    //
-    // Serenity/JS configuration, see:
-    //  https://serenity-js.org/handbook/getting-started/serenity-js-with-webdriverio/
-    serenity: {
-        runner: 'mocha',
-
-        // Configure reporting services, see:
-        //  https://serenity-js.org/handbook/reporting/
-        crew: [
-            '@serenity-js/console-reporter',
-            '@serenity-js/serenity-bdd',
-            [ '@serenity-js/core:ArtifactArchiver', { outputDirectory: 'target/site/serenity' } ],
-            [ '@serenity-js/web:Photographer',      {
-                // strategy: 'TakePhotosOfFailures'  // fast execution, screenshots only when tests fail
-                strategy: 'TakePhotosOfInteractions' // slower execution, more comprehensive reports
-            } ],
-        ]
-    },
+    framework: 'mocha',
+    
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -151,9 +134,10 @@ export const config: WebdriverIOConfig = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec'],
 
-    // Mocha configuration, see:
-    //  https://serenity-js.org/api/mocha-adapter/interface/MochaConfig/
+    // Options to be passed to Mocha.
+    // See the full list at http://mochajs.org/
     mochaOpts: {
+        ui: 'bdd',
         timeout: 60000
     },
 
@@ -217,6 +201,49 @@ export const config: WebdriverIOConfig = {
      * @param {Array} args arguments that command would receive
      */
     // beforeCommand: function (commandName, args) {
+    // },
+    /**
+     * Hook that gets executed before the suite starts
+     * @param {object} suite suite details
+     */
+    // beforeSuite: function (suite) {
+    // },
+    /**
+     * Function to be executed before a test (in Mocha/Jasmine) starts.
+     */
+    // beforeTest: function (test, context) {
+    // },
+    /**
+     * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
+     * beforeEach in Mocha)
+     */
+    // beforeHook: function (test, context, hookName) {
+    // },
+    /**
+     * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
+     * afterEach in Mocha)
+     */
+    // afterHook: function (test, context, { error, result, duration, passed, retries }, hookName) {
+    // },
+    /**
+     * Function to be executed after a test (in Mocha/Jasmine only)
+     * @param {object}  test             test object
+     * @param {object}  context          scope object the test was executed with
+     * @param {Error}   result.error     error object in case the test fails, otherwise `undefined`
+     * @param {*}       result.result    return object of test function
+     * @param {number}  result.duration  duration of test
+     * @param {boolean} result.passed    true if test has passed, otherwise false
+     * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
+     */
+    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    // },
+
+
+    /**
+     * Hook that gets executed after the suite has ended
+     * @param {object} suite suite details
+     */
+    // afterSuite: function (suite) {
     // },
     /**
      * Runs after a WebdriverIO command gets executed

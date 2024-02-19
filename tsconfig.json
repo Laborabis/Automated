@@ -11,9 +11,9 @@
             "node",
             "@wdio/globals/types",
             "expect-webdriverio",
-            "@wdio/mocha-framework",
-            "@wdio/crossbrowsertesting-service"
+            "@wdio/mocha-framework"
         ],
+        "allowJs": true,
         "skipLibCheck": true,
         "noEmit": true,
         "allowImportingTsExtensions": true,
@@ -25,7 +25,8 @@
         "noFallthroughCasesInSwitch": true
     },
     "include": [
-        "test",
-        "wdio.conf.ts"
+        "./src/spec/**/*.ts",
+        "wdio.conf.ts",
+    
     ]
 }

@@ -7,6 +7,7 @@
             "es2022",
             "dom"
         ],
+        "allowJs":true,
         "types": [
             "node",
             "@wdio/globals/types",
@@ -27,6 +28,7 @@
     },
     "include": [
         "test",
+        "./src/test/**/*.ts",
         "wdio.conf.ts"
-    ]
+    ] 
 }

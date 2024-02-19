@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./wdio.conf.ts",
-    "e2e": "wdio wdio.conf.ts"
+    "e2e": "wdio wdio.conf.ts",
+    "lekcja1": "wdio wdio.conf.ts --suite lekcja1"
   },
   "repository": {
     "type": "git",

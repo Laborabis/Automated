@@ -39,6 +39,9 @@ export const config: Options.Testrunner = {
         lekcja1: [
             "./src/spec/e2e/input.ts"
         ],
+        lekcja2: [
+            "./src/spec/e2e/checkbox.ts"
+        ],
     },
     // Patterns to exclude.
     exclude: [

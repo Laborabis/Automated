@@ -8,7 +8,8 @@
     "wdio": "wdio run ./wdio.conf.ts",
     "e2e": "wdio wdio.conf.ts",
     "lekcja1": "wdio wdio.conf.ts --suite lekcja1",
-    "lekcja2": "wdio wdio.conf.ts --suite lekcja2"
+    "lekcja2": "wdio wdio.conf.ts --suite lekcja2",
+    "lekcja3": "wdio wdio.conf.ts --suite lekcja3"
   },
   "repository": {
     "type": "git",

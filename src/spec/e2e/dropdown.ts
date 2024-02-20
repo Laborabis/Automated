@@ -35,6 +35,4 @@ describe("Lesson 3 automation tests - Select", async () => {
     await selectSize.selectByIndex(0);//wybrane po indeksie
     await expect(await selectSize.getValue()).toContain("1");
     })
-
-
 })

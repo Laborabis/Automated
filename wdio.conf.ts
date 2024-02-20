@@ -45,6 +45,9 @@ export const config: Options.Testrunner = {
         lekcja3: [
             "./src/spec/e2e/dropdown.ts"
         ],
+        lekcja4: [
+            "./src/spec/e2e/window.ts"
+        ],
     },
     // Patterns to exclude.
     exclude: [

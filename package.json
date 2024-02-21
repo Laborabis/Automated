@@ -10,7 +10,8 @@
     "lekcja1": "wdio wdio.conf.ts --suite lekcja1",
     "lekcja2": "wdio wdio.conf.ts --suite lekcja2",
     "lekcja3": "wdio wdio.conf.ts --suite lekcja3",
-    "lekcja4": "wdio wdio.conf.ts --suite lekcja4"
+    "lekcja4": "wdio wdio.conf.ts --suite lekcja4",
+    "lekcja5": "wdio wdio.conf.ts --suite lekcja5"
   },
   "repository": {
     "type": "git",

@@ -54,6 +54,9 @@ export const config: Options.Testrunner = {
         lekcja6: [
             "./src/spec/e2e/fileUpload.ts"
         ],
+        lekcja7: [
+            "./src/spec/e2e/moveTo.ts"
+        ],
     },
     // Patterns to exclude.
     exclude: [

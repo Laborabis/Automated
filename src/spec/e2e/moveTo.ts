@@ -1,15 +1,15 @@
-import { homeUrl } from "../../lib/pages";
+import HomePage from "../../pages/homePage";
 
 describe("Lesson 7 automation tests - MoveTo and MoveIntoView", async () => {
-    
+  
     it("Should open automationpractice.pl page", async() => {
-        await browser.url(homeUrl);//otwiera stronę homeUrl z ../../lib/pares.ts
-        await expect(browser).toHaveUrl(homeUrl);//sprawdza czy otworzyła się właściwa strona
+        await HomePage.openHomePage();
     })
 //scrolowanie do ikonki
     it("Should scroll into view facebook icon", async () => {
-        const fbIcon:WebdriverIO.Element = await $("li.facebook");
-        await fbIcon.scrollIntoView();
+        HomePage.moveToFbIcon();
+//        const fbIcon:WebdriverIO.Element = await $("li.facebook");
+//        await fbIcon.scrollIntoView();
    })
 //najeżdzanie myszką
 it("Should hover on women tab", async () => {
